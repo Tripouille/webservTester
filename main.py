@@ -33,6 +33,11 @@ print('Test 2:', 'GET', '/', "valid host")
 nginxAnswer, webservAnswer = doRequest('GET', '/', None, {"Host": "localhost"})
 checkStatus(nginxAnswer, webservAnswer)
 getBody(nginxAnswer, webservAnswer)
+#Test 3
+print('Test 3:', 'GET', '/yolo', "invalid path")
+nginxAnswer, webservAnswer = doRequest('GET', '/yolo', None, {"Host": "localhost"})
+checkStatus(nginxAnswer, webservAnswer)
+getBody(nginxAnswer, webservAnswer)
 
 #Close
 nginx.close()
